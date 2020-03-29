@@ -5,6 +5,8 @@ import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
 
 import logoImg from '../../assets/logo.png';
 
+import api from '../../services/api';
+
 import styles from './styles';
 
 
@@ -32,9 +34,8 @@ export default function Incidents() {
         setLoading(false);
         setPage(page + 1);
     }
-    useEffect(() => {
+    useEffect(() => {loadIncidents();}, []);
 
-    }, []);
     return (
         <View style={styles.container}>
             <View style={styles.header}>
